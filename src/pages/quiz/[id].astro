@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import SectionCard from "../../components/sectionCard";
+import QuizSession from "../../components/quizSession";
+
+export async function getStaticPaths() {
+    const materials = await getCollection('material');
+
+    return materials.map((material) => ({
+        params: { id: material.slug },
+        props: { material }
+    }));
+}
+
+const { material } = Astro.props;
+const { data, slug } = material;
+const { subject, img } = data;
+
+const response = await fetch(`${Astro.url.origin}/api/question/${slug}.json`);
+const { questions } = await response.json();
+export const prerender = true;
+---
+
+<Layout title={`${subject} | Quiz`}>
+    <!--Heading-->
+    <SectionCard title={subject} img={img} />
+
+    <!--Quiz interactivo-->
+    <div class="bg-gray-800 rounded-lg p-6 shadow-md mt-6">
+        <h2 class="text-2xl font-semibold text-white mb-4">Prueba tus conocimientos</h2>
+        <QuizSession client:only="react" materialId={slug} questions={questions} timeLimit={300} />
+    </div>
+</Layout>

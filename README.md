@@ -1,48 +1,38 @@
-# Astro Starter Kit: Basics
+# Quiz!
 
-```sh
-npm create astro@latest -- --template basics
+Este proyecto creado en Astro y React cuenta con dos partes, el frontend y la api que esta integrada en `pages/api` donde se encuentran las preguntas que son usadas en esta aplicación web, el atractivo de este pequeño proyecto es la capacidad de cargar preguntas guardadas previamente y cargarlas para ser usadas en un quiz interactivo del tema que se escoja y al final poder ver en que respuestas estas bien y mal.
+
+### Requisitos
+
+Para correr este código se necesita tener instalado lo siguiente:
+- Node.js (versión 18 o superior recomendada)
+- npm o pnpm 
+
+### Clonar
+Descargar el código desde el repo
+```
+git clone https://github.com/LuisMuz/astro-quiz.git
+cd astro-quiz
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Instalar
+El siguiente comando instalará todas las dependencias necesarias para la aplicación
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+```npm install```
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+### Ejecutar la Aplicación en Desarrollo
 
-## 🚀 Project Structure
+Para iniciar el entorno de desarrollo, usa:
 
-Inside of your Astro project, you'll see the following folders and files:
+```npm run dev```
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Esto iniciará un servidor de desarrollo y la aplicación estará disponible en `http://localhost:4321/` (por defecto).
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Construir para Producción
 
-## 🧞 Commands
+Si deseas generar los archivos estáticos para desplegar en producción, usa:
 
-All commands are run from the root of the project, from a terminal:
+```npm run build```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Esto creará una carpeta dist/ con los archivos listos para ser desplegados en un hosting estático.
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
